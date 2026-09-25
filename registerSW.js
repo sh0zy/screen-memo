@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/screen-memo/sw.js', { scope: '/screen-memo/' })})}
