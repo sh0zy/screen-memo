@@ -3,6 +3,10 @@
 今日やることを1画面にまとめて、スクリーンショットでロック画面の壁紙にするための PWA。
 データはすべて端末内（IndexedDB / localStorage）に保存され、外部には送信されません。
 
+**公開URL: https://sh0zy.github.io/screen-memo/**
+
+スマホのブラウザで開き、「ホーム画面に追加」するとアプリとして使えます（オフライン動作）。
+
 ## 開発
 
 ```bash
@@ -11,6 +15,19 @@ npm run dev      # 開発サーバー
 npm run build    # 型チェック + 本番ビルド
 npm run lint     # oxlint
 npm run preview  # ビルド結果の確認
+npm run deploy   # ビルドして gh-pages ブランチへ公開
+```
+
+## デプロイ
+
+GitHub Pages の `gh-pages` ブランチ配信。`npm run deploy` を実行すると、
+ビルド結果が `gh-pages` ブランチに push され数十秒で反映されます。
+
+サブパス配信のため `vite.config.ts` の `base` を `/screen-memo/` にしています。
+独自ドメインや別のリポジトリ名に移すときは、環境変数で上書きできます。
+
+```bash
+VITE_BASE=/ npm run build
 ```
 
 ## 構成
